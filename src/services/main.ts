@@ -56,8 +56,6 @@ app.use('/workflows', async (req: Request, res: Response) => {
   const connection = await Connection.connect();
   const response = await connection.workflowService.listWorkflowExecutions({
     namespace: 'default',
-    // query: `ExecutionStatus = "Running"`,
-    // query: `RunId = "45216dee-1125-45ad-bbc5-8dc201ed2015"`,
   });
 
   res.status(200);

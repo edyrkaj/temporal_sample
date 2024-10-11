@@ -2,6 +2,8 @@
 
 import postgres from 'postgres';
 
+require('dotenv').config();
+
 export async function getData(tableName: string): Promise<any[]> {
   const client = postgres({
     db: process.env.PG_DB,
