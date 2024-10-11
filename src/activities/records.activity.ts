@@ -4,7 +4,7 @@ import postgres from 'postgres';
 
 require('dotenv').config();
 
-export async function getData(tableName: string): Promise<any[]> {
+async function getData(tableName: string): Promise<any[]> {
   const client = postgres({
     db: process.env.PG_DB,
     host: '127.0.0.1',
@@ -21,4 +21,9 @@ export async function getData(tableName: string): Promise<any[]> {
     await client.CLOSE;
     return [];
   }
+}
+
+export async function getRecords(tableName: string): Promise<any[]> {
+  const response = await getData(tableName);
+  return response;
 }

@@ -12,7 +12,7 @@ async function run() {
     taskQueue: TASK_QUEUE_NAME,
     workflowId: WORKFLOW_ID,
   });
-  console.log(`The records Workflow returned: \n ${result}`);
+  console.log(`The records Workflow returned: \n ${JSON.stringify(result)}`);
 }
 
 run().catch((err) => {
